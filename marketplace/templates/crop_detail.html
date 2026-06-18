@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Crop Details</title>
+
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/crop_detail.css' %}">
+
+</head>
+
+<body>
+
+<h1>{{ crop.crop_name }}</h1>
+
+<p>Price : ₹{{ crop.price }}</p>
+
+<p>Market Price : ₹{{ crop.market_price }}</p>
+
+<p>Quantity : {{ crop.quantity }}</p>
+
+<p>{{ crop.description }}</p>
+
+<img src="{{ crop.image.url }}" width="300">
+
+<h2>Average Rating : ⭐ {{ average_rating|default:"0" }}/5</h2>
+
+<hr>
+
+<h2>Customer Reviews</h2>
+
+{% for feedback in feedbacks %}
+
+<div>
+
+    <p>Rating : ⭐ {{ feedback.rating }}/5</p>
+
+    <p>Comment : {{ feedback.comment }}</p>
+
+</div>
+
+<hr>
+
+{% empty %}
+
+<p>No Reviews Yet</p>
+
+{% endfor %}
+
+<br>
+
+{% if crop.quantity > 0 %}
+
+<a href="{% url 'place_order' crop.id %}">Buy Now</a>
+
+{% else %}
+
+<h3 style="color:red;">Out Of Stock</h3>
+
+{% endif %}
+
+<br><br>
+
+<a href="{% url 'add_feedback' crop.id %}">Give Feedback</a>
+
+<script src="{% static 'js/crop_detail.js' %}"></script>
+
+</body>
+</html>

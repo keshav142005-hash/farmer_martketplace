@@ -1,0 +1,297 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+    linear-gradient(
+    rgba(0,0,0,.5),
+    rgba(0,0,0,.5)
+    ),
+    url("https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=1600");
+
+    background-size:cover;
+    background-position:center;
+    overflow:hidden;
+}
+
+/* Floating Elements */
+
+body::before{
+
+    content:"🌾";
+
+    position:absolute;
+
+    left:5%;
+
+    top:15%;
+
+    font-size:80px;
+
+    animation:float 8s infinite;
+}
+
+body::after{
+
+    content:"🚜";
+
+    position:absolute;
+
+    right:5%;
+
+    bottom:15%;
+
+    font-size:80px;
+
+    animation:float 6s infinite;
+}
+
+/* Login Container */
+
+.login-container{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px;
+}
+
+/* Login Card */
+
+.login-card{
+
+    width:450px;
+
+    padding:45px;
+
+    border-radius:30px;
+
+    background:
+    rgba(255,255,255,.12);
+
+    backdrop-filter:blur(20px);
+
+    border:
+    1px solid rgba(255,255,255,.2);
+
+    box-shadow:
+    0 25px 50px rgba(0,0,0,.3);
+
+    text-align:center;
+
+    animation:cardEntry 1.2s ease;
+}
+
+.login-card h2{
+
+    color:white;
+
+    font-size:2.5rem;
+
+    margin-bottom:10px;
+
+    text-shadow:
+    0 0 20px #7CFC00;
+}
+
+.subtitle{
+
+    color:#ddd;
+
+    margin-bottom:30px;
+
+    font-size:15px;
+}
+
+/* Inputs */
+
+.login-card input{
+
+    width:100%;
+
+    padding:15px;
+
+    margin-bottom:20px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:15px;
+
+    background:
+    rgba(255,255,255,.15);
+
+    color:white;
+
+    font-size:16px;
+
+    transition:.4s;
+}
+
+.login-card input:focus{
+
+    box-shadow:
+    0 0 20px #7CFC00;
+
+    transform:scale(1.02);
+}
+
+/* Password Box */
+
+.password-box{
+
+    position:relative;
+}
+
+.password-box span{
+
+    position:absolute;
+
+    right:15px;
+
+    top:15px;
+
+    cursor:pointer;
+
+    font-size:18px;
+}
+
+/* Button */
+
+button{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:
+    linear-gradient(
+    45deg,
+    #22c55e,
+    #16a34a
+    );
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.4s;
+}
+
+button:hover{
+
+    transform:
+    translateY(-5px);
+
+    box-shadow:
+    0 0 30px #22c55e;
+}
+
+/* Error Message */
+
+.error-message{
+
+    color:#ffb3b3;
+
+    margin-top:15px;
+}
+
+/* Register Link */
+
+.register-link{
+
+    margin-top:25px;
+
+    color:white;
+}
+
+.register-link a{
+
+    color:#7CFC00;
+
+    text-decoration:none;
+
+    font-weight:bold;
+}
+
+.register-link a:hover{
+
+    text-decoration:underline;
+}
+
+/* Animations */
+
+@keyframes cardEntry{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(80px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+    }
+}
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-30px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+}
+
+@media(max-width:768px){
+
+.login-card{
+
+    width:100%;
+
+    padding:30px;
+}
+
+.login-card h2{
+
+    font-size:2rem;
+}
+
+}

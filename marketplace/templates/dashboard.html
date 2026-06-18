@@ -1,0 +1,215 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <h2>🌾 Farmer Panel</h2>
+
+        <a href="{% url 'add_crop' %}">Add Crop</a>
+
+        <a href="{% url 'crop_list' %}">My Crops</a>
+
+        <a href="{% url 'farmer_orders' %}">Orders</a>
+
+        <a href="{% url 'farmer_profile' %}">Profile</a>
+
+        <a href="{% url 'export_excel' %}">Excel Report</a>
+
+        <a href="{% url 'export_pdf' %}">PDF Report</a>
+
+    </aside>
+
+    <!-- Main Area -->
+
+    <main class="main-content">
+
+        <div class="welcome-card">
+
+            <h1>
+                Welcome {{ request.session.farmer_name }}
+            </h1>
+
+            {% if latest_order %}
+            <p>
+                Latest Order :
+                {{ latest_order.crop.crop_name }}
+                ordered by
+                {{ latest_order.buyer.name }}
+            </p>
+            {% endif %}
+
+        </div>
+
+        <!-- Stats -->
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+                <h3>Total Crops</h3>
+                <span>{{ total_crops }}</span>
+            </div>
+
+            <div class="stat-card">
+                <h3>Total Orders</h3>
+                <span>{{ total_orders }}</span>
+            </div>
+
+            <div class="stat-card">
+                <h3>Pending Orders</h3>
+                <span>{{ pending_orders }}</span>
+            </div>
+
+            <div class="stat-card">
+                <h3>Accepted Orders</h3>
+                <span>{{ accepted_orders }}</span>
+            </div>
+
+        </div>
+
+        <!-- Weather -->
+
+        <div class="weather-card">
+
+            <h2>🌦 Weather Update</h2>
+
+            <p>Temperature : {{ weather.temp }}°C</p>
+
+            <p>Humidity : {{ weather.humidity }}%</p>
+
+            <p>Condition : {{ weather.weather }}</p>
+
+        </div>
+
+        <!-- Analytics -->
+
+        <div class="analytics-grid">
+
+            <div class="analytics-card">
+
+                <h2>Crop Analytics</h2>
+
+                <p>Average Price : ₹{{ average_price }}</p>
+
+                <p>Highest Price : ₹{{ highest_price }}</p>
+
+                <p>Lowest Price : ₹{{ lowest_price }}</p>
+
+            </div>
+
+            <div class="analytics-card">
+
+                <h2>Revenue Analytics</h2>
+
+                <p>Total Revenue : ₹{{ total_revenue }}</p>
+
+                <p>Average Revenue : ₹{{ average_revenue }}</p>
+
+                <p>{{ highest_revenue_crop }}</p>
+
+            </div>
+
+        </div>
+
+        <!-- Graphs -->
+
+        <div class="graph-grid">
+
+            <div class="graph-card">
+
+                <h2>Crop Quantity</h2>
+
+                <img src="/media/crop_graph.png">
+
+            </div>
+
+            <div class="graph-card">
+
+                <h2>Order Status</h2>
+
+                <img src="/media/order_pie_chart.png">
+
+            </div>
+
+            <div class="graph-card">
+
+                <h2>Revenue Graph</h2>
+
+                <img src="/media/revenue_graph.png">
+
+            </div>
+
+        </div>
+
+        <!-- Orders -->
+
+        <div class="orders-card">
+
+            <h2>Recent Orders</h2>
+
+            {% for order in recent_orders %}
+
+            <div class="order-item">
+
+                {{ order.buyer.name }}
+                ordered
+                {{ order.crop.crop_name }}
+                ({{ order.quantity }}kg)
+
+            </div>
+
+            {% empty %}
+
+            <p>No Orders Yet</p>
+
+            {% endfor %}
+
+        </div>
+
+        <!-- Feedback -->
+
+        <div class="feedback-section">
+
+            <h2>Recent Feedbacks</h2>
+
+            {% for feedback in recent_feedbacks %}
+
+            <div class="feedback-card">
+
+                <p>
+                    Rating :
+                    {{ feedback.rating }}/5
+                </p>
+
+                <p>
+                    {{ feedback.comment }}
+                </p>
+
+            </div>
+
+            {% empty %}
+
+            <p>No Feedback Yet</p>
+
+            {% endfor %}
+
+        </div>
+
+    </main>
+
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/dashboard.js' %}"></script>
+{% endblock %}

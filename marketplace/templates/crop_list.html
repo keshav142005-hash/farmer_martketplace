@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Crops</title>
+
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/crop_list.css' %}">
+</head>
+<body>
+
+<h1>My Crops</h1>
+
+<a href="{% url 'add_crop' %}">Add New Crop</a>
+
+<hr>
+
+{% for crop in crops %}
+
+<h3>{{ crop.crop_name }}</h3>
+
+<p>Quantity : {{ crop.quantity }}</p>
+
+<p>Your Price : ₹{{ crop.price }}</p>
+
+<p>Market Price : ₹{{ crop.market_price }}</p>
+<p>Price : ₹{{ crop.price }}</p>
+
+<p>Market Price : ₹{{ crop.market_price }}</p>
+
+<img src="{{ crop.image.url }}" width="200">
+
+<hr>
+
+<p>
+  <b>Market Price:</b>
+ ₹{{ crop.market_price }}
+</p>
+
+
+<br><br>
+
+<a href="{% url 'edit_crop' crop.id %}">Edit</a>
+
+<a href="{% url 'delete_crop' crop.id %}">Delete</a>
+
+<hr>
+
+{% endfor %}
+
+<script src="{% static 'js/crop_list.js' %}"></script>
+
+</body>
+</html>

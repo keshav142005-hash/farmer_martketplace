@@ -1,0 +1,337 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    background:
+    linear-gradient(
+    rgba(0,0,0,.55),
+    rgba(0,0,0,.55)
+    ),
+    url("https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=1600");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
+    min-height:100vh;
+
+    padding:50px;
+}
+
+/* Main Content */
+
+body{
+
+    color:white;
+}
+
+/* Crop Title */
+
+h1{
+
+    text-align:center;
+
+    font-size:4rem;
+
+    margin-bottom:30px;
+
+    text-shadow:
+    0 0 20px #7CFC00;
+
+    animation:glow 2s infinite alternate;
+}
+
+/* Crop Image */
+
+img{
+
+    display:block;
+
+    margin:30px auto;
+
+    width:400px;
+
+    max-width:100%;
+
+    border-radius:25px;
+
+    border:5px solid white;
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.4);
+
+    transition:.5s;
+}
+
+img:hover{
+
+    transform:
+    scale(1.05)
+    rotate(2deg);
+
+    box-shadow:
+    0 0 40px #7CFC00;
+}
+
+/* Details */
+
+p{
+
+    max-width:900px;
+
+    margin:15px auto;
+
+    padding:18px;
+
+    background:
+    rgba(255,255,255,.1);
+
+    backdrop-filter:blur(10px);
+
+    border-radius:15px;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    transition:.4s;
+}
+
+p:hover{
+
+    transform:translateX(10px);
+
+    background:
+    rgba(255,255,255,.18);
+}
+
+/* Rating */
+
+h2{
+
+    text-align:center;
+
+    margin:25px 0;
+
+    color:#ffd700;
+}
+
+/* Reviews */
+
+div{
+
+    max-width:900px;
+
+    margin:20px auto;
+
+    background:
+    rgba(255,255,255,.12);
+
+    backdrop-filter:blur(12px);
+
+    padding:20px;
+
+    border-radius:20px;
+
+    border-left:5px solid #7CFC00;
+
+    transition:.4s;
+}
+
+div:hover{
+
+    transform:
+    translateY(-5px);
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.3);
+}
+
+/* Buy Button */
+
+a{
+
+    display:inline-block;
+
+    text-decoration:none;
+
+    padding:15px 35px;
+
+    margin:15px;
+
+    border-radius:50px;
+
+    color:white;
+
+    font-weight:bold;
+
+    transition:.4s;
+}
+
+/* Buy Now */
+
+a[href*="place_order"]{
+
+    background:
+    linear-gradient(
+    45deg,
+    #4CAF50,
+    #8BC34A
+    );
+}
+
+a[href*="place_order"]:hover{
+
+    transform:
+    translateY(-5px);
+
+    box-shadow:
+    0 0 25px #4CAF50;
+}
+
+/* Feedback */
+
+a[href*="feedback"]{
+
+    background:
+    linear-gradient(
+    45deg,
+    #2196F3,
+    #03A9F4
+    );
+}
+
+a[href*="feedback"]:hover{
+
+    transform:
+    translateY(-5px);
+
+    box-shadow:
+    0 0 25px #2196F3;
+}
+
+/* Out Of Stock */
+
+h3{
+
+    text-align:center;
+
+    font-size:2rem;
+
+    animation:blink 1s infinite;
+}
+
+/* HR */
+
+hr{
+
+    margin:30px auto;
+
+    width:90%;
+
+    border:none;
+
+    height:2px;
+
+    background:
+    linear-gradient(
+    to right,
+    transparent,
+    white,
+    transparent
+    );
+}
+
+/* Floating Elements */
+
+body::before{
+
+    content:"🌾";
+
+    position:fixed;
+
+    left:5%;
+
+    top:20%;
+
+    font-size:60px;
+
+    animation:float 8s infinite;
+}
+
+body::after{
+
+    content:"🌱";
+
+    position:fixed;
+
+    right:5%;
+
+    top:35%;
+
+    font-size:60px;
+
+    animation:float 6s infinite;
+}
+
+/* Animations */
+
+@keyframes glow{
+
+    from{
+
+        text-shadow:
+        0 0 10px #7CFC00;
+    }
+
+    to{
+
+        text-shadow:
+        0 0 25px #7CFC00,
+        0 0 50px #7CFC00;
+    }
+}
+
+@keyframes blink{
+
+    50%{
+
+        opacity:.3;
+    }
+}
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-30px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+}
+
+@media(max-width:768px){
+
+h1{
+    font-size:2.5rem;
+}
+
+body{
+    padding:20px;
+}
+
+img{
+    width:100%;
+}
+
+}

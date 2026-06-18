@@ -1,0 +1,209 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/buyer_dashboard.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+
+    <div class="sidebar">
+
+        <h2>🛒 Buyer Panel</h2>
+
+        <a href="{% url 'marketplace' %}">
+            Marketplace
+        </a>
+
+        <a href="{% url 'buyer_orders' %}">
+            My Orders
+        </a>
+
+        <a href="{% url 'buyer_profile' %}">
+            Profile
+        </a>
+
+        <a href="{% url 'export_excel' %}">
+            Excel Report
+        </a>
+
+        <a href="{% url 'export_pdf' %}">
+            PDF Report
+        </a>
+
+    </div>
+
+    <!-- Main Content -->
+
+    <div class="main-content">
+
+        <h1>
+            Buyer Dashboard
+        </h1>
+
+        <!-- Stats Cards -->
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+                <h3>Total Orders</h3>
+                <span>{{ total_orders }}</span>
+            </div>
+
+            <div class="stat-card">
+                <h3>Pending</h3>
+                <span>{{ pending_orders }}</span>
+            </div>
+
+            <div class="stat-card">
+                <h3>Accepted</h3>
+                <span>{{ accepted_orders }}</span>
+            </div>
+
+            <div class="stat-card">
+                <h3>Rejected</h3>
+                <span>{{ rejected_orders }}</span>
+            </div>
+
+        </div>
+
+        <!-- Analytics -->
+
+        <div class="analytics-card">
+
+            <h2>
+                💰 Purchase Analytics
+            </h2>
+
+            <p>
+                Total Money Spent :
+                ₹{{ total_spent }}
+            </p>
+
+            <p>
+                Pandas Orders :
+                {{ total_dataframe_orders }}
+            </p>
+
+        </div>
+
+        <!-- Notifications -->
+
+        <div class="notification-card">
+
+            <h2>
+                🔔 Notifications
+            </h2>
+
+            {% for order in recent_orders %}
+
+            <div class="notification-item">
+
+                {{ order.crop.crop_name }}
+
+                -
+
+                {{ order.status }}
+
+            </div>
+
+            {% empty %}
+
+            <p>No Notifications</p>
+
+            {% endfor %}
+
+        </div>
+
+        <!-- Graph Section -->
+
+        <div class="graph-grid">
+
+            <div class="graph-card">
+
+                <h2>
+                    📈 Purchase Graph
+                </h2>
+
+                <img src="/media/buyer_graph.png">
+
+            </div>
+
+            <div class="graph-card">
+
+                <h2>
+                    🥧 Order Status
+                </h2>
+
+                <img src="/media/buyer_pie_chart.png">
+
+            </div>
+
+        </div>
+
+        <!-- Feedback -->
+
+        <div class="feedback-section">
+
+            <h2>
+                ⭐ My Feedbacks
+            </h2>
+
+            {% for feedback in buyer_feedbacks %}
+
+            <div class="feedback-card">
+
+                <h3>
+                    {{ feedback.crop.crop_name }}
+                </h3>
+
+                <p>
+                    Rating :
+                    {{ feedback.rating }}/5
+                </p>
+
+                <p>
+                    {{ feedback.comment }}
+                </p>
+
+            </div>
+
+            {% empty %}
+
+            <p>No Feedback Given Yet</p>
+
+            {% endfor %}
+
+        </div>
+
+        <!-- Support -->
+
+        <div class="support-card">
+
+            <h2>
+                📞 Support
+            </h2>
+
+            <a class="support-btn"
+               href="https://wa.me/916200852210?text=Hello%20Buyer%20Support"
+               target="_blank">
+
+               WhatsApp Support
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/buyer_dashboard.js' %}"></script>
+{% endblock %}

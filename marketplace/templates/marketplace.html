@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace</title>
+
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/marketplace.css' %}">
+</head>
+
+<body>
+
+<h1>Available Crops</h1>
+
+<form method="GET">
+
+    <input type="text" name="search" placeholder="Search Crop">
+
+    <button type="submit">Search</button>
+
+</form>
+
+<hr>
+
+<form method="GET">
+
+    <input type="number" name="max_price" placeholder="Maximum Price">
+
+    <button type="submit">Filter Price</button>
+
+</form>
+
+<hr>
+
+{% for crop in crops %}
+
+<div>
+
+    <h3>{{ crop.crop_name }}</h3>
+
+    {% if crop.quantity > 50 %}
+
+        <p style="color:green;">Available</p>
+
+    {% elif crop.quantity > 0 %}
+
+        <p style="color:orange;">Low Stock</p>
+
+    {% else %}
+
+        <p style="color:red;">Out Of Stock</p>
+
+    {% endif %}
+
+    <p>Price : ₹{{ crop.price }}</p>
+
+    <p>Quantity : {{ crop.quantity }}</p>
+
+    <p>{{ crop.description }}</p>
+
+    <img src="{{ crop.image.url }}" width="200">
+
+    <br><br>
+
+    <a href="{% url 'crop_detail' crop.id %}">View Details</a>
+
+    &nbsp;&nbsp;
+
+    <a href="https://wa.me/91{{ crop.farmer.phone }}" target="_blank">Chat On WhatsApp</a>
+
+</div>
+
+<hr>
+
+{% empty %}
+
+<h3>No Crops Available</h3>
+
+{% endfor %}
+<script src="{% static 'js/marketplace.js' %}"></script>
+</body>
+</html>

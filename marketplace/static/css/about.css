@@ -1,0 +1,206 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f4fff4;
+    overflow-x:hidden;
+}
+
+/* HERO SECTION */
+
+.hero{
+    height:100vh;
+    background:url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=1600') center/cover;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.55);
+}
+
+.hero-content{
+    position:relative;
+    text-align:center;
+    color:white;
+    z-index:2;
+    animation:fadeUp 2s ease;
+}
+
+.hero-content h1{
+    font-size:4rem;
+    margin-bottom:20px;
+    text-shadow:0 0 20px #7CFC00;
+}
+
+.hero-content p{
+    font-size:1.5rem;
+}
+
+/* ABOUT */
+
+.about-section{
+    padding:80px 10%;
+}
+
+.about-card{
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+    transition:0.5s;
+}
+
+.about-card:hover{
+    transform:translateY(-10px);
+}
+
+.about-card h2{
+    color:#2e7d32;
+    margin-bottom:20px;
+}
+
+/* FEATURES */
+
+.feature-section{
+    padding:80px 10%;
+    background:linear-gradient(
+    135deg,
+    #d4fc79,
+    #96e6a1
+    );
+}
+
+.section-title{
+    text-align:center;
+    font-size:3rem;
+    color:#1b5e20;
+    margin-bottom:50px;
+}
+
+.feature-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.feature-card{
+    background:white;
+    padding:30px;
+    text-align:center;
+    border-radius:20px;
+    font-size:1.1rem;
+    font-weight:bold;
+    box-shadow:0 10px 20px rgba(0,0,0,0.15);
+    transition:0.5s;
+    cursor:pointer;
+}
+
+.feature-card:hover{
+    transform:scale(1.08) rotate(2deg);
+    background:#4caf50;
+    color:white;
+}
+
+/* STATS */
+
+.stats{
+    padding:100px 10%;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:30px;
+}
+
+.stat-box{
+    width:250px;
+    background:white;
+    text-align:center;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+    transition:0.5s;
+}
+
+.stat-box:hover{
+    transform:translateY(-15px);
+}
+
+.stat-box h3{
+    color:#2e7d32;
+    font-size:3rem;
+}
+
+.stat-box p{
+    margin-top:10px;
+    font-size:1.2rem;
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(80px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* FLOATING LEAVES */
+
+body::before{
+    content:"🌿";
+    position:fixed;
+    left:5%;
+    top:10%;
+    font-size:40px;
+    animation:floatLeaf 10s infinite linear;
+}
+
+body::after{
+    content:"🍃";
+    position:fixed;
+    right:5%;
+    top:20%;
+    font-size:40px;
+    animation:floatLeaf 8s infinite linear;
+}
+
+@keyframes floatLeaf{
+
+    0%{
+        transform:translateY(-100px) rotate(0deg);
+    }
+
+    100%{
+        transform:translateY(900px) rotate(360deg);
+    }
+
+}
+
+@media(max-width:768px){
+
+.hero-content h1{
+    font-size:2.5rem;
+}
+
+.section-title{
+    font-size:2rem;
+}
+
+}

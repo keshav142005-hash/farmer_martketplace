@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+
+    <title>Farmer Registration</title>
+    {% load static %} 
+    <link rel="stylesheet"href="{% static 'css/register.css' %}">
+     
+</head>
+
+<body>
+
+ <div class="register-container">
+
+     <div class="register-card">
+
+        <h2>🌱 Farmer Registration</h2>
+
+        <p class="subtitle">
+            Create Your Farmer Account
+        </p>
+
+        <form method="POST" enctype="multipart/form-data">
+
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <button type="submit">Register</button>
+
+        </form>
+
+        <div class="login-link">
+
+            Already Registered?
+
+            <a href="/login/">Login Here</a>
+        </div>
+   </div>
+ </div>
+ <script src="{% static 'js/register.js' %}"></script>
+</body>
+</html>

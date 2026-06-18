@@ -1,0 +1,305 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+    linear-gradient(
+    rgba(0,0,0,.55),
+    rgba(0,0,0,.55)
+    ),
+    url("https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=1600");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
+    padding:40px;
+
+    overflow-x:hidden;
+}
+
+/* Floating Icons */
+
+body::before{
+
+    content:"🚜";
+
+    position:fixed;
+
+    left:4%;
+
+    top:15%;
+
+    font-size:80px;
+
+    animation:float 8s infinite;
+}
+
+body::after{
+
+    content:"🌾";
+
+    position:fixed;
+
+    right:4%;
+
+    bottom:15%;
+
+    font-size:80px;
+
+    animation:float 6s infinite;
+}
+
+/* Register Container */
+
+.register-container{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+}
+
+/* Register Card */
+
+.register-card{
+
+    width:700px;
+
+    padding:45px;
+
+    border-radius:30px;
+
+    background:
+    rgba(255,255,255,.12);
+
+    backdrop-filter:blur(20px);
+
+    border:
+    1px solid rgba(255,255,255,.2);
+
+    box-shadow:
+    0 25px 60px rgba(0,0,0,.3);
+
+    color:white;
+
+    animation:cardShow 1.2s ease;
+}
+
+.register-card h2{
+
+    text-align:center;
+
+    font-size:2.8rem;
+
+    margin-bottom:10px;
+
+    color:white;
+
+    text-shadow:
+    0 0 25px #7CFC00;
+}
+
+.subtitle{
+
+    text-align:center;
+
+    margin-bottom:35px;
+
+    color:#ddd;
+}
+
+/* Django Form */
+
+.register-card p{
+
+    margin-bottom:18px;
+}
+
+.register-card label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+    color:#fff;
+}
+
+.register-card input,
+.register-card textarea,
+.register-card select{
+
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:15px;
+
+    background:
+    rgba(255,255,255,.15);
+
+    color:white;
+
+    font-size:15px;
+
+    transition:.4s;
+}
+
+.register-card input:focus,
+.register-card textarea:focus,
+.register-card select:focus{
+
+    box-shadow:
+    0 0 25px #7CFC00;
+
+    transform:scale(1.02);
+}
+
+.register-card textarea{
+
+    resize:none;
+
+    min-height:120px;
+}
+
+/* File Upload */
+
+input[type="file"]{
+
+    padding:12px;
+}
+
+/* Button */
+
+button{
+
+    width:100%;
+
+    margin-top:20px;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:
+    linear-gradient(
+    45deg,
+    #22c55e,
+    #16a34a
+    );
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.4s;
+}
+
+button:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 0 30px #22c55e;
+}
+
+/* Login Link */
+
+.login-link{
+
+    text-align:center;
+
+    margin-top:25px;
+
+    color:white;
+}
+
+.login-link a{
+
+    color:#7CFC00;
+
+    text-decoration:none;
+
+    font-weight:bold;
+}
+
+.login-link a:hover{
+
+    text-decoration:underline;
+}
+
+/* Animation */
+
+@keyframes cardShow{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(80px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+    }
+}
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-30px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+}
+
+@media(max-width:768px){
+
+.register-card{
+
+    width:100%;
+
+    padding:25px;
+}
+
+.register-card h2{
+
+    font-size:2rem;
+}
+
+}

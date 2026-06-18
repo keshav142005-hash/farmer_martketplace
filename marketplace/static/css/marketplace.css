@@ -1,0 +1,353 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    background:
+    linear-gradient(
+    rgba(0,0,0,.55),
+    rgba(0,0,0,.55)
+    ),
+    url("https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=1600");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
+    min-height:100vh;
+
+    padding:40px;
+}
+
+/* Heading */
+
+h1{
+
+    text-align:center;
+
+    color:white;
+
+    font-size:4rem;
+
+    margin-bottom:40px;
+
+    text-shadow:
+    0 0 25px #7CFC00;
+
+    animation:glow 2s infinite alternate;
+}
+
+/* Search + Filter */
+
+form{
+
+    max-width:900px;
+
+    margin:20px auto;
+
+    display:flex;
+
+    gap:15px;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+}
+
+form input{
+
+    width:300px;
+
+    padding:15px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:50px;
+
+    background:
+    rgba(255,255,255,.15);
+
+    backdrop-filter:blur(15px);
+
+    color:white;
+
+    font-size:16px;
+}
+
+form input::placeholder{
+
+    color:#ddd;
+}
+
+form button{
+
+    padding:15px 30px;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+    color:white;
+
+    background:
+    linear-gradient(
+    45deg,
+    #22c55e,
+    #16a34a
+    );
+
+    transition:.4s;
+}
+
+form button:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 0 25px #22c55e;
+}
+
+/* Crop Cards */
+
+body > div{
+
+    max-width:1100px;
+
+    margin:35px auto;
+
+    padding:30px;
+
+    border-radius:25px;
+
+    background:
+    rgba(255,255,255,.10);
+
+    backdrop-filter:blur(20px);
+
+    border:
+    1px solid rgba(255,255,255,.15);
+
+    color:white;
+
+    transition:.5s;
+}
+
+body > div:hover{
+
+    transform:
+    translateY(-10px);
+
+    box-shadow:
+    0 20px 40px rgba(124,252,0,.3);
+}
+
+body > div h3{
+
+    color:#7CFC00;
+
+    font-size:2rem;
+
+    margin-bottom:15px;
+}
+
+body > div p{
+
+    margin:10px 0;
+
+    line-height:1.8;
+}
+
+/* Image */
+
+body > div img{
+
+    width:280px;
+
+    height:220px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+    margin-top:15px;
+
+    transition:.5s;
+}
+
+body > div img:hover{
+
+    transform:scale(1.05);
+
+    box-shadow:
+    0 0 25px #7CFC00;
+}
+
+/* Links */
+
+body > div a{
+
+    display:inline-block;
+
+    margin-top:20px;
+
+    margin-right:15px;
+
+    text-decoration:none;
+
+    padding:12px 25px;
+
+    border-radius:50px;
+
+    color:white;
+
+    font-weight:bold;
+
+    transition:.4s;
+}
+
+body > div a:first-of-type{
+
+    background:
+    linear-gradient(
+    45deg,
+    #3b82f6,
+    #2563eb
+    );
+}
+
+body > div a:last-of-type{
+
+    background:
+    linear-gradient(
+    45deg,
+    #25D366,
+    #128C7E
+    );
+}
+
+body > div a:hover{
+
+    transform:translateY(-4px);
+}
+
+/* HR */
+
+hr{
+
+    border:none;
+
+    height:1px;
+
+    background:
+    rgba(255,255,255,.15);
+
+    margin:30px auto;
+
+    max-width:1200px;
+}
+
+/* Empty Message */
+
+h3{
+
+    text-align:center;
+
+    color:white;
+}
+
+/* Floating Icons */
+
+body::before{
+
+    content:"🚜";
+
+    position:fixed;
+
+    left:3%;
+
+    top:20%;
+
+    font-size:70px;
+
+    animation:float 8s infinite;
+}
+
+body::after{
+
+    content:"🌾";
+
+    position:fixed;
+
+    right:3%;
+
+    bottom:20%;
+
+    font-size:70px;
+
+    animation:float 6s infinite;
+}
+
+/* Animations */
+
+@keyframes glow{
+
+    from{
+        text-shadow:0 0 10px #7CFC00;
+    }
+
+    to{
+        text-shadow:
+        0 0 25px #7CFC00,
+        0 0 50px #7CFC00;
+    }
+}
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-25px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+}
+
+@media(max-width:768px){
+
+body{
+
+    padding:20px;
+}
+
+h1{
+
+    font-size:2.5rem;
+}
+
+form input{
+
+    width:100%;
+}
+
+body > div img{
+
+    width:100%;
+    height:auto;
+}
+
+}

@@ -1,0 +1,163 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#0f172a,#14532d,#064e3b);
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+.dashboard{
+    display:flex;
+    min-height:100vh;
+}
+
+/* Sidebar */
+
+.sidebar{
+    width:280px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(20px);
+    border-right:1px solid rgba(255,255,255,.15);
+    padding:30px;
+    position:sticky;
+    top:0;
+    height:100vh;
+}
+
+.sidebar h2{
+    color:white;
+    text-align:center;
+    margin-bottom:40px;
+    font-size:28px;
+}
+
+.sidebar a{
+    display:block;
+    text-decoration:none;
+    color:white;
+    padding:15px;
+    margin-bottom:15px;
+    border-radius:15px;
+    transition:.4s;
+    background:rgba(255,255,255,.05);
+}
+
+.sidebar a:hover{
+    background:#22c55e;
+    transform:translateX(10px);
+}
+
+/* Main */
+
+.main-content{
+    flex:1;
+    padding:40px;
+}
+
+.welcome-card{
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(20px);
+    border-radius:25px;
+    padding:30px;
+    margin-bottom:30px;
+}
+
+.welcome-card h1{
+    color:white;
+    font-size:3rem;
+}
+
+.welcome-card p{
+    color:#d1fae5;
+    margin-top:15px;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    margin-bottom:30px;
+}
+
+.stat-card{
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+    transition:.5s;
+}
+
+.stat-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 40px rgba(34,197,94,.3);
+}
+
+.stat-card h3{
+    color:white;
+    margin-bottom:15px;
+}
+
+.stat-card span{
+    color:#7CFC00;
+    font-size:2.5rem;
+    font-weight:bold;
+}
+
+.weather-card,
+.analytics-card{
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
+    border-radius:20px;
+    padding:25px;
+    color:white;
+}
+
+.analytics-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+    gap:25px;
+    margin:30px 0;
+}
+
+.weather-card h2,
+.analytics-card h2{
+    margin-bottom:20px;
+    color:#7CFC00;
+}
+
+
+.orders-card,
+.feedback-section{
+    margin-top:30px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
+    border-radius:20px;
+    padding:25px;
+}
+
+.orders-card h2,
+.feedback-section h2{
+    color:#7CFC00;
+    margin-bottom:20px;
+}
+
+.order-item,
+.feedback-card{
+    background:rgba(255,255,255,.08);
+    padding:15px;
+    border-radius:15px;
+    color:white;
+    margin-bottom:15px;
+    transition:.4s;
+}
+
+.order-item:hover,
+.feedback-card:hover{
+    transform:translateX(10px);
+}

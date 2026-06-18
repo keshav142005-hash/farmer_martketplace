@@ -1,0 +1,255 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+    background:
+    linear-gradient(
+    rgba(0,0,0,.45),
+    rgba(0,0,0,.45)
+    ),
+    url("https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=1600");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
+    padding:40px;
+
+    overflow-x:hidden;
+}
+
+/* Title */
+
+h2{
+
+    color:white;
+
+    font-size:3rem;
+
+    margin-bottom:30px;
+
+    text-shadow:
+    0 0 15px #7CFC00;
+
+    animation:glow 2s infinite alternate;
+}
+
+/* Form */
+
+form{
+
+    width:100%;
+    max-width:850px;
+
+    padding:40px;
+
+    border-radius:30px;
+
+    background:
+    rgba(255,255,255,.12);
+
+    backdrop-filter:blur(20px);
+
+    border:
+    1px solid rgba(255,255,255,.2);
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.3);
+}
+
+/* Django Form */
+
+form p{
+
+    margin-bottom:20px;
+}
+
+label{
+
+    display:block;
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    margin-bottom:8px;
+}
+
+input,
+textarea,
+select{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:15px;
+
+    font-size:16px;
+
+    color:white;
+
+    background:
+    rgba(255,255,255,.15);
+
+    transition:.4s;
+}
+
+textarea{
+
+    min-height:130px;
+
+    resize:none;
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+
+    box-shadow:
+    0 0 20px #7CFC00;
+
+    background:
+    rgba(255,255,255,.22);
+}
+
+/* File Input */
+
+input[type="file"]{
+
+    padding:10px;
+}
+
+/* Button */
+
+button{
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    color:white;
+
+    background:
+    linear-gradient(
+    45deg,
+    #16a34a,
+    #84cc16
+    );
+
+    transition:.4s;
+}
+
+button:hover{
+
+    transform:
+    translateY(-5px);
+
+    box-shadow:
+    0 0 30px #84cc16;
+}
+
+/* Floating Icons */
+
+body::before{
+
+    content:"🌾";
+
+    position:fixed;
+
+    left:4%;
+
+    top:15%;
+
+    font-size:60px;
+
+    animation:float 8s infinite;
+}
+
+body::after{
+
+    content:"🚜";
+
+    position:fixed;
+
+    right:4%;
+
+    bottom:20%;
+
+    font-size:60px;
+
+    animation:float 6s infinite;
+}
+
+/* Animations */
+
+@keyframes glow{
+
+    from{
+
+        text-shadow:
+        0 0 10px #7CFC00;
+    }
+
+    to{
+
+        text-shadow:
+        0 0 25px #7CFC00,
+        0 0 50px #7CFC00;
+    }
+}
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-25px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+}
+
+@media(max-width:768px){
+
+h2{
+    font-size:2rem;
+}
+
+form{
+    padding:25px;
+}
+
+}

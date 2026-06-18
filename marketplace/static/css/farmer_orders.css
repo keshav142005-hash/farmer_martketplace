@@ -1,0 +1,273 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    min-height:100vh;
+
+    background:
+    linear-gradient(
+    rgba(0,0,0,.55),
+    rgba(0,0,0,.55)
+    ),
+    url("https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=1600");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
+    padding:50px;
+}
+
+/* Heading */
+
+h1{
+
+    text-align:center;
+
+    color:white;
+
+    font-size:3.5rem;
+
+    margin-bottom:50px;
+
+    text-shadow:
+    0 0 25px #7CFC00;
+
+    animation:glow 2s infinite alternate;
+}
+
+/* Container */
+
+.orders-container{
+
+    max-width:1300px;
+
+    margin:auto;
+}
+
+/* Cards */
+
+.order-card{
+
+    background:
+    rgba(255,255,255,.12);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:25px;
+
+    padding:30px;
+
+    margin-bottom:30px;
+
+    border:
+    1px solid rgba(255,255,255,.15);
+
+    transition:.5s;
+
+    color:white;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.order-card:hover{
+
+    transform:
+    translateY(-10px);
+
+    box-shadow:
+    0 20px 40px rgba(124,252,0,.3);
+}
+
+.order-card h2{
+
+    color:#7CFC00;
+
+    margin-bottom:15px;
+}
+
+.order-card p{
+
+    margin:10px 0;
+
+    font-size:17px;
+}
+
+/* Status */
+
+.status{
+
+    margin-top:15px;
+
+    font-weight:bold;
+
+    color:#FFD700;
+}
+
+/* Buttons */
+
+.btn-group{
+
+    margin-top:25px;
+
+    display:flex;
+
+    gap:15px;
+}
+
+.accept-btn,
+.reject-btn{
+
+    text-decoration:none;
+
+    padding:12px 28px;
+
+    border-radius:50px;
+
+    color:white;
+
+    font-weight:bold;
+
+    transition:.4s;
+}
+
+.accept-btn{
+
+    background:
+    linear-gradient(
+    45deg,
+    #22c55e,
+    #16a34a
+    );
+}
+
+.reject-btn{
+
+    background:
+    linear-gradient(
+    45deg,
+    #ef4444,
+    #dc2626
+    );
+}
+
+.accept-btn:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:
+    0 0 25px #22c55e;
+}
+
+.reject-btn:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:
+    0 0 25px #ef4444;
+}
+
+/* Empty Box */
+
+.empty-box{
+
+    background:
+    rgba(255,255,255,.12);
+
+    backdrop-filter:blur(15px);
+
+    padding:30px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    color:white;
+
+    font-size:22px;
+}
+
+/* Floating Icons */
+
+body::before{
+
+    content:"🚜";
+
+    position:fixed;
+
+    left:3%;
+
+    top:20%;
+
+    font-size:70px;
+
+    animation:float 8s infinite;
+}
+
+body::after{
+
+    content:"🌾";
+
+    position:fixed;
+
+    right:3%;
+
+    bottom:20%;
+
+    font-size:70px;
+
+    animation:float 6s infinite;
+}
+
+/* Animations */
+
+@keyframes glow{
+
+    from{
+        text-shadow:0 0 10px #7CFC00;
+    }
+
+    to{
+        text-shadow:
+        0 0 25px #7CFC00,
+        0 0 50px #7CFC00;
+    }
+}
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-25px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+}
+
+@media(max-width:768px){
+
+body{
+    padding:20px;
+}
+
+h1{
+    font-size:2.2rem;
+}
+
+.btn-group{
+    flex-direction:column;
+}
+
+}

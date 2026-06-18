@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>My Orders</title>
+
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/buyer_orders.css' %}">
+</head>
+
+<body>
+
+<div class="orders-container">
+
+    <h1>📦 My Orders</h1>
+
+    <div class="table-container">
+
+        <table>
+
+            <tr>
+
+                <th>Crop</th>
+                <th>Quantity</th>
+                <th>Status</th>
+                <th>Invoice</th>
+                <th>Order Date</th>
+                <th>Action</th>
+
+            </tr>
+
+            {% for order in orders %}
+
+            <tr>
+
+                <td>{{ order.crop.crop_name }}</td>
+
+                <td>{{ order.quantity }}</td>
+
+                <td>
+
+                    <span class="status">
+                        {{ order.status }}
+                    </span>
+
+                </td>
+
+                <td>
+                    <a href="{% url 'download_invoice' order.id %}"class="invoice-btn">Download PDF</a>
+                </td>
+
+                <td>{{ order.order_date }}</td>
+
+                <td>
+                    <a href="{% url 'cancel_order' order.id %}"class="cancel-btn">Cancel</a>
+                </td>
+
+            </tr>
+
+            {% endfor %}
+
+        </table>
+
+    </div>
+
+</div>
+
+<script src="{% static 'js/buyer_orders.js' %}"></script>
+
+</body>
+</html>

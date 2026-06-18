@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/farmer_profile.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="profile-container">
+
+    <h1>Farmer Profile</h1>
+
+    <hr>
+
+    <img src="{{ farmer.profile_pic.url }}" width="200" height="200">
+
+    <h2>{{ farmer.name }}</h2>
+
+    <p>Email :{{ farmer.email }}</p>
+
+    <p>Phone :{{ farmer.phone }}</p>
+
+    <p>Address :{{ farmer.address }}</p>
+
+    <hr>
+
+    <h3>Total Crops :{{ total_crops }}</h3>
+
+    <h3>Total Orders :{{ total_orders }}</h3>
+
+    <h3>Total Revenue :₹{{ total_revenue }}</h3>
+     
+    <a href="{% url 'edit_profile' %}">Edit Profile</a>
+    <hr>
+
+    <a href="{% url 'dashboard' %}">Back To Dashboard</a>
+
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/farmer_profile.js' %}"></script>
+{% endblock %}

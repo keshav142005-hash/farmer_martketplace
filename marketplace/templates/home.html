@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="hero">
+
+    <h1>🌾 Welcome To Farmer Marketplace</h1>
+
+    <p>
+        Connect Farmers Directly With Buyers.
+        Sell crops easily, get better prices,
+        and grow your agricultural business.
+    </p>
+
+    <div class="hero-buttons">
+
+        <a href="/register/" class="btn">Farmer Register</a>
+
+        <a href="/buyer_register/" class="btn">Buyer Register</a>
+
+        <a href="/login/" class="btn-outline">Farmer Login</a>
+
+        <a href="/buyer_login/" class="btn-outline">Buyer Login</a>
+
+    </div>
+
+</div>
+
+<section class="features">
+
+    <div class="card">
+
+        <h2>🌱 Direct Selling</h2>
+
+        <p>
+            Farmers can sell crops directly to buyers
+            without middlemen.
+        </p>
+
+    </div>
+
+    <div class="card">
+
+        <h2>💰 Better Prices</h2>
+
+        <p>
+            Get fair market prices and maximize profits.
+        </p>
+
+    </div>
+
+    <div class="card">
+
+        <h2>🚚 Easy Ordering</h2>
+
+        <p>
+            Buyers can browse crops and place orders
+            quickly.
+        </p>
+
+    </div>
+
+</section>
+
+<section class="about">
+
+    <h2>Why Choose Farmer Marketplace?</h2>
+
+    <p>
+        Farmer Marketplace helps farmers showcase their
+        products online and allows buyers to purchase
+        fresh crops directly from trusted farmers.
+    </p>
+
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/home.js' %}"></script>
+{% endblock %}

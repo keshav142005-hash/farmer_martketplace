@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Contact Us</title>
+
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+</head>
+
+<body>
+
+<div class="contact-container">
+
+    <h1>📞 Contact Us</h1>
+
+    <div class="contact-info">
+
+        <p>Email :keshav14.2005@gmail.com</p>
+
+        <p>📱 Phone : +91 6200852210</p>
+
+        <p>
+            💬 WhatsApp :
+            <a href="https://wa.me/916200852210">Chat Now</a>
+        </p>
+
+    </div>
+
+    <form>
+
+        <input type="text" placeholder="Your Name">
+
+        <input type="email" placeholder="Your Email">
+
+        <textarea placeholder="Write Your Message"></textarea>
+
+        <button>Send Message</button>
+
+    </form>
+
+</div>
+
+<script src="{% static 'js/contact.js' %}"></script>
+
+</body>
+</html>

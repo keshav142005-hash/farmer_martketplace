@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Order</title>
+     {% load static %}
+    <link rel="stylesheet" href="{% static 'css/place_order.css' %}">
+</head>
+<body>
+    <h3>{{ crop.crop_name }}</h3>
+
+  <form method="POST">
+     {% csrf_token %}
+     <input type="number" name="quantity" placeholder="Enter Quantity" required>
+     <button type="submit">Place Order</button>
+     </form>
+</body>
+</html>

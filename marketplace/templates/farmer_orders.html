@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Orders</title>
+
+    {% load static %}
+
+    <link rel="stylesheet"
+          href="{% static 'css/farmer_orders.css' %}">
+
+</head>
+
+<body>
+
+<div class="orders-container">
+
+    <h1>📦 Farmer Orders</h1>
+
+    {% for order in orders %}
+
+    <div class="order-card">
+
+        <h2>{{ order.crop.crop_name }}</h2>
+
+        <p><strong>Buyer :</strong> {{ order.buyer.name }}</p>
+
+        <p><strong>Quantity :</strong> {{ order.quantity }} KG</p>
+
+        <p class="status">
+            <strong>Status :</strong> {{ order.status }}
+        </p>
+
+        <div class="btn-group">
+
+            <a class="accept-btn"
+               href="{% url 'accept_order' order.id %}">
+               Accept
+            </a>
+
+            <a class="reject-btn"
+               href="{% url 'reject_order' order.id %}">
+               Reject
+            </a>
+
+        </div>
+
+    </div>
+
+    {% empty %}
+
+    <div class="empty-box">
+        No Orders Available
+    </div>
+
+    {% endfor %}
+
+</div>
+
+<script src="{% static 'js/farmer_orders.js' %}"></script>
+
+</body>
+</html>

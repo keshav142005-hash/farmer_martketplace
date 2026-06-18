@@ -1,0 +1,243 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:
+    linear-gradient(
+    135deg,
+    rgba(0,0,0,.55),
+    rgba(0,0,0,.55)
+    ),
+    url("https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=1600");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
+    padding:50px 30px;
+}
+
+/* Glass Container */
+
+.orders-container{
+
+    max-width:1400px;
+
+    margin:auto;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.2);
+
+    border-radius:30px;
+
+    padding:40px;
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.3);
+
+    animation:fadeUp 1s ease;
+}
+
+/* Title */
+
+.orders-container h1{
+
+    text-align:center;
+
+    color:white;
+
+    font-size:3rem;
+
+    margin-bottom:35px;
+
+    text-shadow:
+    0 0 15px #7CFC00;
+
+    animation:glow 2s infinite alternate;
+}
+
+/* Table */
+
+.table-container{
+
+    overflow-x:auto;
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    background:white;
+
+    border-radius:20px;
+
+    overflow:hidden;
+}
+
+th{
+
+    background:
+    linear-gradient(
+    90deg,
+    #1b5e20,
+    #4CAF50
+    );
+
+    color:white;
+
+    padding:18px;
+
+    font-size:17px;
+}
+
+td{
+
+    padding:18px;
+
+    text-align:center;
+
+    border-bottom:1px solid #eee;
+
+    transition:.3s;
+}
+
+tr:hover{
+
+    background:#f1fff1;
+
+    transform:scale(1.01);
+}
+
+/* Status */
+
+.status{
+
+    padding:8px 16px;
+
+    border-radius:30px;
+
+    background:#d4edda;
+
+    color:#155724;
+
+    font-weight:bold;
+}
+
+/* Invoice Button */
+
+.invoice-btn{
+
+    text-decoration:none;
+
+    color:white;
+
+    background:
+    linear-gradient(
+    45deg,
+    #2196F3,
+    #00BCD4
+    );
+
+    padding:10px 18px;
+
+    border-radius:30px;
+
+    transition:.4s;
+}
+
+.invoice-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 0 20px #2196F3;
+}
+
+/* Cancel Button */
+
+.cancel-btn{
+
+    text-decoration:none;
+
+    color:white;
+
+    background:
+    linear-gradient(
+    45deg,
+    #f44336,
+    #ff7043
+    );
+
+    padding:10px 18px;
+
+    border-radius:30px;
+
+    transition:.4s;
+}
+
+.cancel-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 0 20px #f44336;
+}
+
+/* Animations */
+
+@keyframes glow{
+
+    from{
+        text-shadow:
+        0 0 10px #7CFC00;
+    }
+
+    to{
+        text-shadow:
+        0 0 25px #7CFC00,
+        0 0 50px #7CFC00;
+    }
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(60px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.orders-container{
+    padding:20px;
+}
+
+.orders-container h1{
+    font-size:2rem;
+}
+
+th,
+td{
+    font-size:14px;
+    padding:12px;
+}
+
+}

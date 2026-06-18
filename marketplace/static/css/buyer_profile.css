@@ -1,0 +1,215 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:
+    linear-gradient(
+    135deg,
+    #0f2027,
+    #203a43,
+    #2c7744
+    );
+
+    min-height:100vh;
+}
+
+/* Main Container */
+
+.container{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+    padding:50px 20px;
+}
+
+/* Title */
+
+h1{
+
+    text-align:center;
+
+    color:white;
+
+    font-size:3rem;
+
+    margin-bottom:30px;
+
+    animation:glow 2s infinite alternate;
+}
+
+/* Profile Image */
+
+img{
+
+    width:220px;
+
+    height:220px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:8px solid white;
+
+    box-shadow:
+    0 0 40px rgba(255,255,255,.5);
+
+    transition:.5s;
+
+    animation:float 4s infinite;
+}
+
+img:hover{
+
+    transform:
+    scale(1.08)
+    rotate(5deg);
+
+    box-shadow:
+    0 0 50px #7CFC00;
+}
+
+/* Profile Card */
+
+h2,
+p{
+
+    width:600px;
+
+    max-width:95%;
+
+    background:
+    rgba(255,255,255,.12);
+
+    backdrop-filter:blur(15px);
+
+    color:white;
+
+    padding:18px;
+
+    margin:12px auto;
+
+    border-radius:18px;
+
+    text-align:center;
+
+    transition:.4s;
+}
+
+h2:hover,
+p:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.25);
+}
+
+/* Buttons */
+
+a{
+
+    display:inline-block;
+
+    padding:14px 28px;
+
+    margin:10px;
+
+    text-decoration:none;
+
+    color:white;
+
+    font-weight:bold;
+
+    border-radius:35px;
+
+    background:
+    linear-gradient(
+    45deg,
+    #22c55e,
+    #16a34a
+    );
+
+    transition:.4s;
+}
+
+a:hover{
+
+    transform:
+    translateY(-5px);
+
+    box-shadow:
+    0 0 25px #22c55e;
+}
+
+/* HR */
+
+hr{
+
+    width:80%;
+
+    margin:25px auto;
+
+    border:none;
+
+    height:2px;
+
+    background:
+    linear-gradient(
+    to right,
+    transparent,
+    white,
+    transparent
+    );
+}
+
+/* Animations */
+
+@keyframes glow{
+
+    from{
+
+        text-shadow:
+        0 0 10px #7CFC00;
+    }
+
+    to{
+
+        text-shadow:
+        0 0 25px #7CFC00,
+        0 0 50px #7CFC00;
+    }
+}
+
+@keyframes float{
+
+    0%,100%{
+
+        transform:translateY(0);
+    }
+
+    50%{
+
+        transform:translateY(-15px);
+    }
+}
+
+@media(max-width:768px){
+
+h1{
+    font-size:2rem;
+}
+
+img{
+    width:170px;
+    height:170px;
+}
+
+}
